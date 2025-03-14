@@ -4,13 +4,22 @@
   box-sizing: border-box;
 }
 body {
-  background: #001e4d;
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(
+      rgba(222, 102, 212, 0.7),
+      rgba(4, 5, 11, 0.7)
+    ),
+    url(images/dogs.avif);
+  background-position: center;
+  background-size: cover;
+  position: relative;
 }
 .app {
-  background: #fff;
+  background: linear-gradient(135deg, #f8ede4, #f4d4ef);
   width: 90%;
   max-width: 600px;
-  margin: 100px auto 0;
+  margin: 40px auto 0;
   border-radius: 10px;
   padding: 30px;
 }

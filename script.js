@@ -1,39 +1,39 @@
 const questions = [
   {
-    question: "spørsmål1",
+    question: "What is the most common dog breed in the world?",
     answers: [
-      { text: "test1", correct: false },
-      { text: "test2", correct: true },
-      { text: "test3", correct: false },
-      { text: "test4", correct: false },
+      { text: "Chihuahua", correct: false },
+      { text: "Labrador Retriever", correct: true },
+      { text: "Golden Retriever", correct: false },
+      { text: "Pomeranian", correct: false },
     ],
   },
 
   {
-    question: "spørsmål2",
+    question: "What is a common health issue for Chihuahuas?",
     answers: [
-      { text: "test1", correct: true },
-      { text: "test2", correct: false },
-      { text: "test3", correct: false },
-      { text: "test4", correct: false },
+      { text: "Heart problems", correct: true },
+      { text: "Joint problems", correct: false },
+      { text: "Allergies", correct: false },
+      { text: "Stomach issues", correct: false },
     ],
   },
   {
-    question: "spørsmål3",
+    question: "What is the primary function of a dog's tail?",
     answers: [
-      { text: "test1", correct: false },
-      { text: "test2", correct: true },
-      { text: "test3", correct: false },
-      { text: "test4", correct: false },
+      { text: "To help balance while running", correct: false },
+      { text: "To communicate with other dogs and animals", correct: true },
+      { text: "To keep the dog warm", correct: false },
+      { text: "To store extra energy", correct: false },
     ],
   },
   {
-    question: "spørsmål4",
+    question: "Which of the following is a hypoallergenic dog breed?",
     answers: [
-      { text: "test1", correct: false },
-      { text: "test2", correct: false },
-      { text: "test3", correct: true },
-      { text: "test4", correct: false },
+      { text: "Chihuahua", correct: false },
+      { text: "Dalmatian", correct: false },
+      { text: "Poodle", correct: true },
+      { text: "Beagle", correct: false },
     ],
   },
 ];
@@ -48,7 +48,7 @@ let score = 0;
 function startQuiz() {
   currentQuestionIndex = 0;
   score = 0;
-  nextButton.innerHTML = "Next";
+  nextButton.textContent = "Next";
   showQuestion();
 }
 
@@ -56,11 +56,11 @@ function showQuestion() {
   resetState();
   let currentQuestion = questions[currentQuestionIndex];
   let questionNo = currentQuestionIndex + 1;
-  questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+  questionElement.textContent = questionNo + ". " + currentQuestion.question;
 
   currentQuestion.answers.forEach((answer) => {
     const button = document.createElement("button");
-    button.innerHTML = answer.text;
+    button.textContent = answer.text;
     button.classList.add("btn");
     answerButtons.appendChild(button);
     if (answer.correct) {
@@ -97,8 +97,8 @@ function selectAnswer(e) {
 
 function showScore() {
   resetState();
-  questionElement.innerHTML = "You scored ${score} out of ${questions.length}!";
-  nextButton.innerHTML = "Play Again";
+  questionElement.textContent = `You scored ${score} out of ${questions.length}!`;
+  nextButton.textContent = "Play Again";
   nextButton.style.display = "block";
 }
 
